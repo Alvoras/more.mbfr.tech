@@ -1,0 +1,1482 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>CTF - Mélodie Bouffier</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#00bdd6">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="cyan" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ctf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mélodie Bouffier" class="md-header__button md-logo" aria-label="Mélodie Bouffier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mélodie Bouffier
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CTF
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mélodie Bouffier" class="md-nav__button md-logo" aria-label="Mélodie Bouffier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Mélodie Bouffier
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Table des matières
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cti/" class="md-nav__link">
+        Threat intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offsec/" class="md-nav__link">
+        Sécurité offensive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../defsec/" class="md-nav__link">
+        Sécurité défensive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CTF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CTF
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chatsubo" class="md-nav__link">
+    Chatsubo
+  </a>
+  
+    <nav class="md-nav" aria-label="Chatsubo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-instances" class="md-nav__link">
+    Les instances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-providers" class="md-nav__link">
+    Les providers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-vpn" class="md-nav__link">
+    Accès VPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ack" class="md-nav__link">
+    ACK&amp;/
+  </a>
+  
+    <nav class="md-nav" aria-label="ACK&amp;/">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploiement-des-instances" class="md-nav__link">
+    Déploiement des instances
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    Challenges
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensional" class="md-nav__link">
+    Dimensional
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimensional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tlpl" class="md-nav__link">
+    TL;PL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiers-pas" class="md-nav__link">
+    Premiers pas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse" class="md-nav__link">
+    Analyse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvl540" class="md-nav__link">
+    UVL540
+  </a>
+  
+    <nav class="md-nav" aria-label="UVL540">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-format-de-sauvegarde" class="md-nav__link">
+    Le format de sauvegarde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-check-dintegrite" class="md-nav__link">
+    Le check d'intégrité
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-generation-dobjets" class="md-nav__link">
+    La génération d'objets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-console" class="md-nav__link">
+    La console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-flag" class="md-nav__link">
+    Le flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chatsubo" class="md-nav__link">
+    Chatsubo
+  </a>
+  
+    <nav class="md-nav" aria-label="Chatsubo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-instances" class="md-nav__link">
+    Les instances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-providers" class="md-nav__link">
+    Les providers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-vpn" class="md-nav__link">
+    Accès VPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ack" class="md-nav__link">
+    ACK&amp;/
+  </a>
+  
+    <nav class="md-nav" aria-label="ACK&amp;/">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploiement-des-instances" class="md-nav__link">
+    Déploiement des instances
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    Challenges
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensional" class="md-nav__link">
+    Dimensional
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimensional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tlpl" class="md-nav__link">
+    TL;PL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiers-pas" class="md-nav__link">
+    Premiers pas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse" class="md-nav__link">
+    Analyse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvl540" class="md-nav__link">
+    UVL540
+  </a>
+  
+    <nav class="md-nav" aria-label="UVL540">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-format-de-sauvegarde" class="md-nav__link">
+    Le format de sauvegarde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-check-dintegrite" class="md-nav__link">
+    Le check d'intégrité
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-generation-dobjets" class="md-nav__link">
+    La génération d'objets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-console" class="md-nav__link">
+    La console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-flag" class="md-nav__link">
+    Le flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ctf">CTF<a class="headerlink" href="#ctf" title="Permanent link">#</a></h1>
+<h2 id="chatsubo">Chatsubo<a class="headerlink" href="#chatsubo" title="Permanent link">#</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Source : Publication du code prévue début juillet</li>
+<li>Inspiration : <a href="https://github.com/CTFd/CTFd">CTFd</a>, <a href="https://github.com/strellic/Hackbox">Hackbox</a>, <a href="https://www.hackthebox.eu/">HackTheBox</a>, <a href="https://tryhackme.com">TryHackMe</a></li>
+<li>Technologies : Python, VueJS, Docker, Wireguard</li>
+</ul>
+</div>
+<p>La plateforme Chatsubo a été créée dans l'optique de donner la possibilité aux communautés de toutes tailles de proposer à leurs membres une plateforme d'entraînement capable d'héberger des instances vulnérables.</p>
+<h3 id="apercu">Aperçu<a class="headerlink" href="#apercu" title="Permanent link">#</a></h3>
+<figure>
+<center>
+    <video alt="Chatsubo Demo" width="100%" controls>
+      <source src="/assets/ctf/chatsubo/media/demo.webm" type="video/webm">
+    Your browser does not support the video tag.
+    </video>
+</center>
+
+  <figcaption>Ajout d'une machine et connexion à l'instance</figcaption>
+</figure>
+<figure>
+    <a href="/assets/ctf/chatsubo/media/track_boxes.png" target="_blank">
+  <img src="/assets/ctf/chatsubo/media/track_boxes.png" />
+  </a>
+  <figcaption>Affichage des challenges de la track "Confirmé"</figcaption>
+</figure>
+
+<figure>
+    <a href="/assets/ctf/chatsubo/media/users.png" target="_blank">
+  <img src="/assets/ctf/chatsubo/media/users.png" />
+  </a>
+  <figcaption>Listing des joueurs</figcaption>
+</figure>
+
+<figure>
+    <a href="/assets/ctf/chatsubo/media/box_user.png" target="_blank">
+  <img src="/assets/ctf/chatsubo/media/box_user.png" />
+  </a>
+  <figcaption>Profil des challenges</figcaption>
+</figure>
+
+<figure>
+    <a href="/assets/ctf/chatsubo/media/edit_box.png" target="_blank">
+  <img src="/assets/ctf/chatsubo/media/edit_box.png" />
+  </a>
+  <figcaption>Interface d'édition des challenges</figcaption>
+</figure>
+
+<figure>
+    <a href="/assets/ctf/chatsubo/media/submissions.png" target="_blank">
+  <img src="/assets/ctf/chatsubo/media/submissions.png" />
+  </a>
+  <figcaption>Affichage des tentatives de validation en temps réel</figcaption>
+</figure>
+
+<figure>
+    <a href="/assets/ctf/chatsubo/media/boxes_admin.png" target="_blank">
+  <img src="/assets/ctf/chatsubo/media/boxes_admin.png" />
+  </a>
+  <figcaption>Interface d'administration des challenges</figcaption>
+</figure>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les captures de démo ont été réalisés avec le thème du CTF ACK&amp;/.</p>
+</div>
+<h3 id="les-instances">Les instances<a class="headerlink" href="#les-instances" title="Permanent link">#</a></h3>
+<p>Chaque challenge se compose de deux parties :</p>
+<ul>
+<li>Le template, qui correspond à l'image à partir de laquelle l'instance sera déployée</li>
+<li>L'instance déployée, qui expose les informations liées à son état ainsi que celles nécessaires pour communiquer avec (adresse IP, realm)</li>
+</ul>
+<p>Lorsque le système de flag dynamique est utilisé, l'instance mettra également à disposition les métadonnées nécessaires pour leur validation depuis la plateforme. </p>
+<p>Pour l'instant, seul Docker supporte ce système grâce aux labels, qu'il est possible de récupérer via l'API et qui sont également accessible au sein du conteneur via les variables d'environnement lors de l'instanciation.  </p>
+<p>Exemple de Dockerfile se basant sur ce système :</p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">alpine:3.12</span>
+
+<span class="k">RUN</span> apk add python3
+
+<span class="k">ARG</span> FLAG0
+<span class="k">ARG</span> SESSION
+
+<span class="k">LABEL</span> chatsubo.template<span class="o">=</span><span class="s2">&quot;hello-flag&quot;</span> <span class="se">\</span>
+        chatsubo.flags.helloworld.value<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FLAG0</span><span class="s2">&quot;</span> <span class="se">\</span>
+        chatsubo.flags.helloworld.points<span class="o">=</span><span class="s2">&quot;25&quot;</span> <span class="se">\</span>
+        chatsubo.session<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SESSION</span><span class="s2">&quot;</span>
+
+<span class="k">RUN</span> mkdir /secrets
+<span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$FLAG0</span><span class="s2">&quot;</span> &gt; /secrets/flag
+<span class="k">WORKDIR</span><span class="s"> /secrets</span>
+
+<span class="k">CMD</span> /bin/sh
+</code></pre></div>
+<p>Avec la ligne de commande permettant de déployer une instance à partir de ce template :</p>
+<div class="highlight"><pre><span></span><code>docker build . --build-arg <span class="nv">FLAG0</span><span class="o">=</span>level0 --build-arg <span class="nv">SESSION</span><span class="o">=</span><span class="k">$(</span>cat /dev/urandom <span class="p">|</span> tr -dc <span class="s1">&#39;a-zA-Z0-9&#39;</span> <span class="p">|</span> fold -w <span class="m">32</span> <span class="p">|</span> head -n <span class="m">1</span><span class="k">)</span>
+</code></pre></div>
+<p>Toutes les informations exposés par les labels sont accessible depuis Chatsubo et peuvent être utilisées pour valider les flags, aiguiller les utilisateurs vers leurs instances, etc.</p>
+<h3 id="les-providers">Les providers<a class="headerlink" href="#les-providers" title="Permanent link">#</a></h3>
+<p>Le principe fondamental du fonctionnement du backend est le suivant : le serveur reçoit des ordres qu'il transmet aux plugins, qui savent comment l'exécuter.</p>
+<p>Cette architecture vise à favoriser au maximum l'adaptation de Chatsubo aux différents environnements de virtualisation des communautés amenées à l'utiliser, </p>
+<p>Ainsi, les plugins tiennent d'une part le rôle de traducteur entre les données exposées par l'hyperviseur et celles attendues par la plateforme pour fonctionner, et d'autre part celui d'intermédiaire entre les ordres reçues depuis l'interface et la manière de les éxécutés.</p>
+<p>Il existe aujourd'hui un plugin pour Docker et pour PVE.</p>
+<p>Si l'on prend PVE comme exemple, il suffit de créer deux fichiers pour le rendre compatible avec Chatsubo :</p>
+<ul>
+<li>Un fichier <code>provider.py</code> qui remplit les besoins suivants :<ul>
+<li>Lister les templates disponibles</li>
+<li>Lister les instances en cours d'exécution</li>
+<li>Rollback une instance au snapshot défini comme l'état initial de la machine</li>
+<li>Créer une instance du provider à partir des données disponibles dans le fichier de configuration</li>
+</ul>
+</li>
+<li>Et un fichier <code>instance.py</code> qui traduit les informations reçues de l'hyperviseur et qui contient les données suivantes :<ul>
+<li>Son nom</li>
+<li>Le <code>realm</code> dont elle fait partie</li>
+<li>Le template duquel elle est issue</li>
+<li>Son adresse IP</li>
+</ul>
+</li>
+</ul>
+<details class="info"><summary>Afficher le code du fichier "provider.py" du plugin PVE</summary><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">proxmoxer</span> <span class="kn">import</span> <span class="n">ProxmoxAPI</span>
+<span class="kn">from</span> <span class="nn">urllib3.exceptions</span> <span class="kn">import</span> <span class="n">MaxRetryError</span>
+
+<span class="kn">from</span> <span class="nn">app.providers.base.provider</span> <span class="kn">import</span> <span class="n">BaseProvider</span>
+<span class="kn">from</span> <span class="nn">app.providers.base.template</span> <span class="kn">import</span> <span class="n">BaseTemplate</span>
+<span class="kn">from</span> <span class="nn">app.providers.exc</span> <span class="kn">import</span> <span class="n">VpnProviderNotFoundException</span><span class="p">,</span> \
+    <span class="n">VpnProviderErrorException</span><span class="p">,</span> <span class="n">BackendConnectionException</span><span class="p">,</span> <span class="n">MetadataNotFoundException</span><span class="p">,</span> <span class="n">MalformedMetadataException</span>
+<span class="kn">from</span> <span class="nn">app.providers.pve.instance</span> <span class="kn">import</span> <span class="n">PVEInstance</span>
+
+
+<span class="k">class</span> <span class="nc">PVEProvider</span><span class="p">(</span><span class="n">BaseProvider</span><span class="p">):</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;pve&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">token_name</span><span class="p">,</span> <span class="n">token_value</span><span class="p">,</span> <span class="n">vpns</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verify_ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pve&quot;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">ProxmoxAPI</span><span class="p">(</span><span class="n">host</span><span class="p">,</span>
+                                 <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span>
+                                 <span class="n">token_name</span><span class="o">=</span><span class="n">token_name</span><span class="p">,</span>
+                                 <span class="n">token_value</span><span class="o">=</span><span class="n">token_value</span><span class="p">,</span>
+                                 <span class="n">verify_ssl</span><span class="o">=</span><span class="n">verify_ssl</span>
+                                 <span class="p">)</span>
+        <span class="n">remote_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">node_data</span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node_data</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">()]</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">remote_nodes</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">BackendConnectionException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Node &#39;</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">&#39; not found&quot;</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="n">vpn_confs</span><span class="o">=</span><span class="n">vpns</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">list_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">templates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">vms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_all</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">filtered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">vm</span><span class="p">:</span> <span class="s2">&quot;CHATSUBO_&quot;</span> <span class="ow">in</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;template&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">vms</span><span class="p">))</span>
+            <span class="n">rg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;CHATSUBO_TEMPLATE=(.*)&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">filtered</span><span class="p">:</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">])</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">match</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">templates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BaseTemplate</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">raise</span>
+
+        <span class="k">return</span> <span class="n">templates</span>
+
+    <span class="k">def</span> <span class="nf">list_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">instances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="n">qemu</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">except</span> <span class="p">(</span><span class="n">MaxRetryError</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">,</span> <span class="ne">ConnectionRefusedError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">BackendConnectionException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
+                <span class="n">inst</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="n">qemu</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="s2">&quot;vmid&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="n">inst</span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
+
+            <span class="n">vms</span> <span class="o">+=</span> <span class="n">instances</span>
+
+        <span class="k">return</span> <span class="n">vms</span>
+
+    <span class="k">def</span> <span class="nf">list_instances</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">realm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">instances</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">vms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_all</span><span class="p">()</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">vm</span><span class="p">:</span> <span class="s2">&quot;CHATSUBO_&quot;</span> <span class="ow">in</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;template&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">vms</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">vm</span> <span class="ow">in</span> <span class="n">raw</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">instances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PVEInstance</span><span class="p">(</span><span class="n">vm</span><span class="p">[</span><span class="s2">&quot;vmid&quot;</span><span class="p">],</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">,</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">],</span> <span class="n">vm</span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">sep</span><span class="p">))</span>
+            <span class="k">except</span> <span class="p">(</span><span class="n">MetadataNotFoundException</span><span class="p">,</span> <span class="n">MalformedMetadataException</span><span class="p">):</span>
+                <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="n">realm</span><span class="p">:</span>
+            <span class="n">instances</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">realm</span> <span class="o">==</span> <span class="n">realm</span><span class="p">,</span> <span class="n">instances</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">instances</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">instances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_instances</span><span class="p">(</span><span class="n">realm</span><span class="o">=</span><span class="n">realm</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">inst</span><span class="o">.</span><span class="n">template</span> <span class="o">==</span> <span class="n">box</span><span class="o">.</span><span class="n">template</span><span class="p">:</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">inst</span>
+
+        <span class="n">snapshots</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="n">qemu</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/snapshot&quot;</span><span class="p">)</span>
+        <span class="n">last_snap_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;running&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">snapshots</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parent&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">last_snap_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="n">qemu</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/snapshot/</span><span class="si">{</span><span class="n">last_snap_name</span><span class="si">}</span><span class="s2">/rollback&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">raw_conf</span><span class="p">):</span>
+        <span class="n">parsed</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">raw_conf</span><span class="p">[</span><span class="s1">&#39;api&#39;</span><span class="p">][</span><span class="s1">&#39;host&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">raw_conf</span><span class="p">[</span><span class="s1">&#39;api&#39;</span><span class="p">][</span><span class="s1">&#39;port&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="n">raw_conf</span><span class="p">[</span><span class="s2">&quot;api&quot;</span><span class="p">][</span><span class="s2">&quot;user&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;token_name&quot;</span><span class="p">:</span> <span class="n">raw_conf</span><span class="p">[</span><span class="s2">&quot;api&quot;</span><span class="p">][</span><span class="s2">&quot;token&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;token_value&quot;</span><span class="p">:</span> <span class="n">raw_conf</span><span class="p">[</span><span class="s2">&quot;api&quot;</span><span class="p">][</span><span class="s2">&quot;token&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;vpns&quot;</span><span class="p">:</span> <span class="n">raw_conf</span><span class="p">[</span><span class="s2">&quot;vpns&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">nodes</span> <span class="o">:=</span> <span class="n">raw_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nodes&quot;</span><span class="p">):</span>
+            <span class="n">parsed</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodes</span>
+
+        <span class="k">if</span> <span class="n">verif</span> <span class="o">:=</span> <span class="n">raw_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;verify_ssl&quot;</span><span class="p">):</span>
+            <span class="n">parsed</span><span class="p">[</span><span class="s2">&quot;verify_ssl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">verif</span>
+
+        <span class="k">if</span> <span class="n">sep</span> <span class="o">:=</span> <span class="n">raw_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sep&quot;</span><span class="p">):</span>
+            <span class="n">parsed</span><span class="p">[</span><span class="s2">&quot;sep&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sep</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">parsed</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="info"><summary>Afficher le code du fichier "instance.py" du plugin PVE</summary><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">app.providers.exc</span> <span class="kn">import</span> <span class="n">MetadataNotFoundException</span><span class="p">,</span> <span class="n">MalformedMetadataException</span>
+<span class="kn">from</span> <span class="nn">app.providers.base.instance</span> <span class="kn">import</span> <span class="n">BaseInstance</span>
+
+
+<span class="k">class</span> <span class="nc">PVEInstance</span><span class="p">(</span><span class="n">BaseInstance</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="s2">&quot;pve&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node</span> <span class="o">=</span> <span class="n">node</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">template</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_meta</span><span class="p">(</span><span class="n">description</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">MetadataNotFoundException</span><span class="p">,</span> <span class="n">MalformedMetadataException</span><span class="p">):</span>
+            <span class="k">raise</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">PVEInstance</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parse_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parse and extract the template, realm and IP address from the metadata field of the instance</span>
+
+<span class="sd">        :param raw: string holding the metadata info</span>
+<span class="sd">        :return: returns the template name, the realm holding this instance and its IP address</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">template</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chatsubo_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">raw</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;template&quot;</span><span class="p">,</span> <span class="s2">&quot;realm&quot;</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="n">MalformedMetadataException</span>
+
+        <span class="n">rg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;(chatsubo_\w*)=(.*)&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;chatsubo_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;template&quot;</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;chatsubo_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;realm&quot;</span><span class="p">:</span>
+                <span class="n">realm</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;chatsubo_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;address&quot;</span><span class="p">:</span>
+                <span class="n">address</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">template</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">address</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_json</span><span class="p">()</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s2">&quot;node&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">,</span>
+        <span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">data</span>
+</code></pre></div>
+</details>
+<p>Une fois le plugin créé, il suffit de renseigner les informations nécessaires dans le fichier de configuration, comme l'exemple ci-dessous :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">providers</span><span class="p">:</span>
+  <span class="nt">pve</span><span class="p">:</span>
+    <span class="nt">warzone</span><span class="p">:</span> <span class="c1"># provider name</span>
+      <span class="nt">api</span><span class="p">:</span>
+        <span class="nt">user</span><span class="p">:</span> <span class="s">&quot;api@pam&quot;</span>
+        <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;https://pve.hacklab&quot;</span>
+        <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8006</span>
+        <span class="nt">token</span><span class="p">:</span>
+         <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;b5215aeb-ae28-432c-b1b7-047276d87cf&quot;</span>
+         <span class="nt">value</span><span class="p">:</span> <span class="s">&quot;dff1ae17-4eb3-4543-a9f2-a703f375c48&quot;</span>
+    <span class="nt">vpns</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">realm</span><span class="p">:</span> <span class="s">&quot;wz01&quot;</span>
+        <span class="nt">url</span><span class="p">:</span> <span class="s">&quot;http://gate.hacklab:7474&quot;</span>
+        <span class="nt">header</span><span class="p">:</span> <span class="s">&quot;X-Chatsubo-Token&quot;</span>
+        <span class="nt">token</span><span class="p">:</span> <span class="s">&quot;W4etxFM57y1MfRCDqzkjKfZVMEbunhoOLNE9Hj9xg7YLoZ0FXZYW8SahlGPJy6SdlRDXfDHe75x9yEZWz9TasKqG5KNPjKsSumI7KVCw28FgLnMnnbsy7jvcGvUdhGVv&quot;</span>
+        <span class="nt">endpoints</span><span class="p">:</span>
+          <span class="nt">config</span><span class="p">:</span> <span class="s">&quot;/api/vpn/get/:username&quot;</span>
+          <span class="nt">check</span><span class="p">:</span> <span class="s">&quot;/api/check&quot;</span>
+
+  <span class="nt">docker</span><span class="p">:</span>
+  <span class="c1"># Empty docker provider config</span>
+</code></pre></div>
+<h3 id="acces-vpn">Accès VPN<a class="headerlink" href="#acces-vpn" title="Permanent link">#</a></h3>
+<p>Afin de faciliter la gestion du réseau et de l'accès des joueurs aux instances, il est nécessaire de passer par un VPN pour accéder aux machines.</p>
+<p>Les joueurs peuvent récupérer leurs accès à tout moment via l'interface web.</p>
+<p>Pour interfacer les ponts VPN avec la plateforme, nous avons besoin d'un client dédié installé sur chacune de ces machines.</p>
+<p>Ce client s'appelle <code>chatsubo-gate</code> et communique avec Chatsubo via une API.</p>
+<p>Son rôle va être d'envoyer le contenu des configurations pré-générées à l'installation et de tenir une table établissant un lien entre un pseudo et une configuration VPN.</p>
+<p>J'utilise l'image Docker <a href="https://github.com/linuxserver/docker-wireguard">linuxserver.io</a> pour générer les configurations et faire tourner le serveur, mais puisque <code>chatsubo-gate</code> n'a besoin que du dossier qui contient les configurations, n'importe quelle méthode peut être utilisée.</p>
+<p>Une configuration minimale est nécessaire pour que la plateforme et le pont VPN puisse communiquer :</p>
+<ul>
+<li>Côté <code>chatsubo-gate</code>, il est nécessaire de renseigner le dossier contenant les fichiers de configurations, le realm ainsi que le token d'authentification utilisé pour sécuriser les échanges avec la plateforme.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">realm</span><span class="p">:</span> <span class="s">&quot;ans01&quot;</span>
+<span class="c1"># This token must be the same on the chatsubo plateform. &quot;cat /dev/urandom | tr -dc &#39;a-zA-Z0-9&#39; | fold -w 128 | head -n 1&quot; works well</span>
+<span class="nt">chatsubo_token</span><span class="p">:</span> <span class="s">&quot;changeme_for_a_strong_and_random_token_like_128+_chars&quot;</span> 
+
+<span class="nt">wg_clients_dir</span><span class="p">:</span> <span class="s">&quot;/opt/chatsubo-gate/clients&quot;</span>
+</code></pre></div>
+<p>La notion de <code>realm</code> est importante puisqu'elle va nous permettre d'une part d'exposer plusieurs instances distinctes d'un même template en parallèle, et d'autre part de connecter plusieurs ponts VPN hébergés sur plusieurs machines différentes au même sous réseau.</p>
+<ul>
+<li>Côté Chatsubo, il est nécessaire d'indiquer l'url du pont, le même token et le realm correspondant dans la configuration de chaque provider.</li>
+</ul>
+<p>Par exemple :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">vpns</span><span class="p">:</span>
+   <span class="p p-Indicator">-</span> <span class="nt">realm</span><span class="p">:</span> <span class="s">&quot;ans01&quot;</span>
+     <span class="nt">url</span><span class="p">:</span> <span class="s">&quot;http://challs.hacklab:7474&quot;</span>
+     <span class="nt">header</span><span class="p">:</span> <span class="s">&quot;X-Chatsubo-Token&quot;</span>
+     <span class="c1"># This token must be the same on the linked chatsubo-gate. &quot;cat /dev/urandom | tr -dc &#39;a-zA-Z0-9&#39; | fold -w 128 | head -n 1&quot; works well</span>
+     <span class="nt">chatsubo_token</span><span class="p">:</span> <span class="s">&quot;changeme_for_a_strong_and_random_token_like_128+_chars&quot;</span> 
+     <span class="nt">endpoints</span><span class="p">:</span>
+       <span class="nt">config</span><span class="p">:</span> <span class="s">&quot;/api/vpn/get/:username&quot;</span>
+       <span class="nt">check</span><span class="p">:</span> <span class="s">&quot;/api/check&quot;</span>
+</code></pre></div>
+<p>L'en-tête utilisé pour l'authentification ainsi que les endpoints sont modifiables via la configuration de Chatsubo afin de faciliter le développement d'un connecteur alternatif dans le but, par exemple, de suporter un réseau basé sur OpenVPN.</p>
+<h2 id="ack">ACK&amp;/<a class="headerlink" href="#ack" title="Permanent link">#</a></h2>
+<p>Le CTF ACK&amp;/ était un évènement destiné exclusivement aux élèves de l'ESGI qui s'est déroulé du 19 au 21 février 2021.</p>
+<p>Les challenges étaient conçus pour se suivre et se répartissaient sur plusieurs instances, comportant chacune 4 niveaux consécutifs.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>Pour passer du level0 au level1, il fallait réussir le challenge de l'utilisateur level0 puis se connecter au suivant grâce au flag obtenu.</p>
+</div>
+<p>Deux tracks étaient disponibles :</p>
+<ul>
+<li>La track "débutants"<ul>
+<li>12 challenges répartis en 3 instances</li>
+</ul>
+</li>
+<li>La track "confirmés"<ul>
+<li>20 challenges répartis en 5 instances</li>
+</ul>
+</li>
+</ul>
+<h3 id="deploiement-des-instances">Déploiement des instances<a class="headerlink" href="#deploiement-des-instances" title="Permanent link">#</a></h3>
+<p>L'ensemble des challenges présents sur l'instance étaient installés et configurés lors du déploiement.</p>
+<details class="note"><summary>Exemple de Dockerfile utilisé pour déployer une instance</summary><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">ubuntu:20.04</span>
+
+<span class="c"># Setup</span>
+<span class="k">RUN</span> apt update
+<span class="k">RUN</span> apt install -y openssh-server vim man less netcat cron zip sl
+
+<span class="k">COPY</span> src/root/etc /etc
+
+<span class="c"># Allow caching of apt by putting it below</span>
+<span class="c"># level0 password</span>
+<span class="k">ARG</span> <span class="nv">RNG0</span><span class="o">=</span>toor
+
+<span class="c"># Challenger&#39;s unique session, handled by Chatsubo</span>
+<span class="k">ARG</span> SESSION
+
+<span class="c"># Register all the generated flag passed by Chatsubo via --build-args</span>
+<span class="c"># ENV is needed to allow entrypoint to access them</span>
+<span class="k">ARG</span> FLAG0
+<span class="k">ARG</span> FLAG1
+<span class="k">ARG</span> FLAG2
+<span class="k">ARG</span> FLAG3
+
+<span class="k">ENV</span> <span class="nv">FLAGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FLAG0</span><span class="s2">;</span><span class="nv">$FLAG1</span><span class="s2">;</span><span class="nv">$FLAG2</span><span class="s2">;</span><span class="nv">$FLAG3</span><span class="s2">&quot;</span>
+<span class="k">RUN</span> <span class="nb">echo</span> <span class="nv">$FLAGS</span>
+
+<span class="k">RUN</span> useradd -ms /bin/bash -p <span class="k">$(</span>openssl passwd -6 <span class="s2">&quot;</span><span class="nv">$RNG0</span><span class="s2">&quot;</span><span class="k">)</span> level0
+<span class="k">RUN</span> useradd -ms /bin/bash -p <span class="k">$(</span>openssl passwd -6 <span class="s2">&quot;</span><span class="nv">$FLAG0</span><span class="s2">&quot;</span><span class="k">)</span> level1
+<span class="k">RUN</span> useradd -ms /bin/bash -p <span class="k">$(</span>openssl passwd -6 <span class="s2">&quot;</span><span class="nv">$FLAG1</span><span class="s2">&quot;</span><span class="k">)</span> level2
+<span class="k">RUN</span> useradd -ms /bin/bash -p <span class="k">$(</span>openssl passwd -6 <span class="s2">&quot;</span><span class="nv">$FLAG2</span><span class="s2">&quot;</span><span class="k">)</span> level3
+<span class="k">RUN</span> useradd -ms /bin/bash -p <span class="k">$(</span>openssl passwd -6 <span class="s2">&quot;</span><span class="nv">$FLAG3</span><span class="s2">&quot;</span><span class="k">)</span> level4
+
+<span class="c"># Exposed metadata, needed by Chatsubo for dynamic flags, session handling and ssh initial access</span>
+<span class="k">LABEL</span> chatsubo.template<span class="o">=</span><span class="s2">&quot;adv_ans01&quot;</span> <span class="se">\</span>
+        chatsubo.creds.ssh.username<span class="o">=</span><span class="s2">&quot;level0&quot;</span> <span class="se">\</span>
+        chatsubo.creds.ssh.password<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$RNG0</span><span class="s2">&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step0.value<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FLAG0</span><span class="s2">&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step0.points<span class="o">=</span><span class="s2">&quot;250&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step1.value<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FLAG1</span><span class="s2">&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step1.points<span class="o">=</span><span class="s2">&quot;250&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step2.value<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FLAG2</span><span class="s2">&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step2.points<span class="o">=</span><span class="s2">&quot;250&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step3.value<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FLAG3</span><span class="s2">&quot;</span> <span class="se">\</span>
+        chatsubo.flags.step3.points<span class="o">=</span><span class="s2">&quot;250&quot;</span> <span class="se">\</span>
+        chatsubo.session<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SESSION</span><span class="s2">&quot;</span>
+
+<span class="c"># Add challenges setup scripts and resources</span>
+<span class="k">COPY</span> src/root /
+<span class="k">RUN</span> chmod u+x /home/level**/ans_init.sh
+
+<span class="c"># Needed for sshd</span>
+<span class="k">RUN</span> mkdir /run/sshd
+
+<span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$FLAGS</span><span class="s2">&quot;</span> &gt; /root/flags
+
+<span class="k">COPY</span> src/entrypoint.sh /entrypoint.sh
+<span class="k">RUN</span> chmod u+x /entrypoint.sh
+
+<span class="k">ENTRYPOINT</span> /bin/bash -c <span class="s1">&#39;/etc/init.d/cron start &amp;&amp; cat /root/flags | /entrypoint.sh&#39;</span>
+</code></pre></div>
+</details>
+<p>Chaque dossier comprenait un Dockerfile comme celui ci-dessus ainsi que l'ensemble des fichiers à copier dans le conteneur.</p>
+<p>Par exemple :</p>
+<div class="highlight"><pre><span></span><code>.
+|-- Dockerfile
+|-- Makefile
+`-- src
+    |-- entrypoint.sh
+    `-- root
+        |-- etc
+        |   `-- ssh
+        |       `-- sshd_config
+        `-- home
+            |-- level0
+            |   |-- ans_init.sh
+            |   `-- main.c
+            |-- level1
+            |   |-- ans_init.sh
+            |   `-- hexhexhex
+            |-- level2
+            |   |-- ans_init.sh
+            |   |-- challenge.py
+            |   `-- create_flag.py
+            |-- level3
+            |   |-- ans_init.sh
+            |   |-- main.c
+            |   `-- patch.py
+            `-- level4
+                |-- ans_init.sh
+                `-- finish.txt
+</code></pre></div>
+<p>L'entrypoint avait pour seul rôle d'appeler le script <code>ans_init.sh</code> présent dans le home de chacun des utilisateurs, en lui transmettant le flag à insérer dans le challenge, le nom de l'utilisateur courant ainsi que celui du suivant :</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+rm -f <span class="nv">$0</span>
+
+<span class="nv">SCRIPT_NAME</span><span class="o">=</span><span class="s2">&quot;ans_init.sh&quot;</span>
+<span class="nv">RAW_FLAGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat /root/flags<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">FLAGS</span><span class="o">=(</span><span class="si">${</span><span class="nv">RAW_FLAGS</span><span class="p">//;/ </span><span class="si">}</span><span class="o">)</span>
+
+<span class="c1"># Start challenge setup script for each levels and remove it</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">0</span>..4<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nv">current_user</span><span class="o">=</span><span class="s2">&quot;level</span><span class="nv">$i</span><span class="s2">&quot;</span>
+  <span class="nv">next_user</span><span class="o">=</span><span class="s2">&quot;level</span><span class="k">$((</span><span class="nv">$i</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>
+  <span class="nv">init_script</span><span class="o">=</span><span class="s2">&quot;/home/level</span><span class="nv">$i</span><span class="s2">/</span><span class="nv">$SCRIPT_NAME</span><span class="s2">&quot;</span>
+  <span class="nv">current_flag</span><span class="o">=</span><span class="si">${</span><span class="nv">FLAGS</span><span class="p">[i]</span><span class="k">:-</span><span class="s2">&quot;_&quot;</span><span class="si">}</span>
+  <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$init_script</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> bash -c <span class="s2">&quot;</span><span class="nv">$init_script</span><span class="s2"> </span><span class="nv">$current_flag</span><span class="s2"> </span><span class="nv">$current_user</span><span class="s2"> </span><span class="nv">$next_user</span><span class="s2">&quot;</span>
+  rm -f <span class="nv">$init_script</span>
+<span class="k">done</span>
+
+rm -f /root/flags
+
+/etc/init.d/cron start
+
+<span class="c1"># Allow remote access</span>
+<span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
+  /usr/sbin/sshd -e -D
+<span class="k">done</span>
+</code></pre></div>
+<p>Ce script, <code>ans_init.sh</code>, était écrit par le créateur du challenge et s'occupait de mettre en place les différents éléments nécessaires à son fonctionnement :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">FLAG</span><span class="o">=</span><span class="nv">$1</span>            
+<span class="nv">CURRENT_USER</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">NEXT_USER</span><span class="o">=</span><span class="nv">$3</span>
+<span class="nv">bin_name</span><span class="o">=</span><span class="s2">&quot;hexhexhex&quot;</span>
+
+chown -R <span class="s2">&quot;</span><span class="nv">$CURRENT_USER</span><span class="s2">:&quot;</span> <span class="s2">&quot;/home/</span><span class="nv">$CURRENT_USER</span><span class="s2">&quot;</span>
+chown <span class="s2">&quot;</span><span class="nv">$NEXT_USER</span><span class="s2">:&quot;</span> <span class="s2">&quot;/home/</span><span class="nv">$CURRENT_USER</span><span class="s2">/</span><span class="nv">$bin_name</span><span class="s2">&quot;</span>
+chmod u+xs <span class="s2">&quot;/home/</span><span class="nv">$CURRENT_USER</span><span class="s2">/</span><span class="nv">$bin_name</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span> <span class="nv">$FLAG</span> &gt; <span class="s2">&quot;/home/</span><span class="nv">$NEXT_USER</span><span class="s2">/flag&quot;</span>
+chown <span class="s2">&quot;</span><span class="nv">$NEXT_USER</span><span class="s2">:&quot;</span> <span class="s2">&quot;/home/</span><span class="nv">$NEXT_USER</span><span class="s2">/flag&quot;</span>
+chmod <span class="m">400</span> <span class="s2">&quot;/home/</span><span class="nv">$NEXT_USER</span><span class="s2">/flag&quot;</span>
+</code></pre></div>
+<h2 id="challenges">Challenges<a class="headerlink" href="#challenges" title="Permanent link">#</a></h2>
+<h3 id="dimensional">Dimensional<a class="headerlink" href="#dimensional" title="Permanent link">#</a></h3>
+<p>Ce challenge a été diffusé lors du CTF ACK&amp;/ organisé par le Hacklab ESGI. </p>
+<p>Il s'agit d'une <em>text adventure</em> auquelle il faut tricher pour obtenir un objet précis ainsi qu'un mot de passe, qui permettent au joueur de se rendre dans le cyberespace et d'y de récupérer le flag.</p>
+<h4 id="tlpl">TL;PL<a class="headerlink" href="#tlpl" title="Permanent link">#</a></h4>
+<p>1) Lire la note sur le bureau pour comprendre l'objectif : aller dans le cyberespace grâce à l'item UVL540, chargé depuis la console</p>
+<p>2) Trouver la console qui nécessite un mot de passe</p>
+<p>3) Faire le tour du jeu pour comprendre qu'il faut obtenir l'UVL540 en trichant</p>
+<p>4) Décompresser le fichier de sauvegarde pour le rendre lisible</p>
+<p>5) Analyser le format de la sauvegarde pour identifier sa structure</p>
+<p>6) Identifier comment générer le check d'intégrité (<code>sha512(save)[12:]</code>) en analysant les paquets importés par le binaire via <code>strings</code></p>
+<p>7) Itérer sur les identifiants des items, séquentiels, jusqu'à obtenir l'UVL540 (ID 4)</p>
+<p>8) Trouver le dialogue caché grâce à <code>strings</code> pour identifier le *clavier* et récupérer ainsi le mot de passe de la console caché dessous</p>
+<p>9) Charger l'UVL540 pour aller dans le cyberespace et obtenir le flag</p>
+<h4 id="premiers-pas">Premiers pas<a class="headerlink" href="#premiers-pas" title="Permanent link">#</a></h4>
+<p>Nous lançons le binaire une première fois :</p>
+<p><img alt="" src="https://i.imgur.com/OViXUKw.png" /></p>
+<p>Il s'agit d'une text adventure, qui fonctionne de la manière suivante : </p>
+<ul>
+<li>Les *astérisques* indiquent les <em>endroits</em> où nous pouvons nous déplacer</li>
+<li>Les [crochets] indiquent les objets avec lesquels nous pouvons interagir</li>
+<li>Nous pouvons faire une sauvegarde grâce à la commande save</li>
+</ul>
+<p>Nous allons au bureau et nous lisons la note :</p>
+<div class="highlight"><pre><span></span><code>Un mot est écrit sur la note :
+        Salut alvoras,
+        J&#39;t&#39;avais bien dit que j&#39;allais réussir.
+        Un moyen de transcender la matière, de communiquer à la vitesse de la lumière. Bordel si ça donne pas envie ça !
+        Si un jour tu lis ce message, démerde-toi pour récupèrer un [UVL540] et charge le programme de saut depuis la [console], dans la pièce d&#39;à côté.
+        Puis rejoins-moi dans le *cyberespace*.
+                - Moc
+</code></pre></div>
+<p>Plusieurs informations importantes ici :</p>
+<ul>
+<li>Nous devons obtenir un UVL540, qui est un objet utilisable</li>
+<li>Nous devons trouver la console pour charger le programme de saut</li>
+<li>Puis nous devons nous rendre dans la salle "cyberespace"</li>
+</ul>
+<p>Nous pouvons tenter de nous rendre directement dans le cyberespace : 
+<img alt="" src="https://i.imgur.com/By7s0yL.png" /></p>
+<p>... qui nous accueille en nous grillant la cervelle puisque nous ne possédons pas d'UVL540.</p>
+<p>En relançant le jeu, nous remarquons que la sauvegarde a été supprimée.</p>
+<p>Nous continuons à découvrir le jeu en allant vers la porte, indiquée au début du jeu. </p>
+<p><img alt="" src="https://i.imgur.com/80LDKcE.png" /></p>
+<p>Nous découvrons la prochaine salle, la "Salle de saut", et nous déverrouillons la porte grâce à la clef située au dessus de la porte.</p>
+<p>Nous pouvons consulter notre inventaire avec la commande <code>inv</code> :</p>
+<p><img alt="" src="https://i.imgur.com/EY1pMyM.png" /></p>
+<p>Une fois dans la salle de saut, nous trouvons la <code>console</code>, dont nous avons besoin pour charger l'UVL540 avant de pouvoir nous rendre dans le cyberespace.</p>
+<p>Nous tentons d'utiliser la console : </p>
+<p><img alt="" src="https://i.imgur.com/b9ySTB6.png" /></p>
+<p>Il nous faut donc un mot de passe... et notre sauvegarde est une nouvelle fois supprimée si nous nous trompons.</p>
+<p>Nous continuons à fouiller, mais nous avons bel et bien fait le tour du jeu.</p>
+<h4 id="analyse">Analyse<a class="headerlink" href="#analyse" title="Permanent link">#</a></h4>
+<p>Récapitulons :
++ Le but du jeu est de nous rendre dans le cyberespace 
++ Pour cela, nous avons besoin de l'item "UVL540"
++ Il faut que cet item soit "chargé" via la console
++ La console demande un mot de passe</p>
+<p>Nous avons donc besoin :
+1) D'obtenir un objet qui ne peut pas être obtenu dans le jeu
+2) Du mot de passe de la console</p>
+<p>Il va falloir tricher !</p>
+<h4 id="uvl540">UVL540<a class="headerlink" href="#uvl540" title="Permanent link">#</a></h4>
+<h5 id="le-format-de-sauvegarde">Le format de sauvegarde<a class="headerlink" href="#le-format-de-sauvegarde" title="Permanent link">#</a></h5>
+<p>Commençons par analyser une sauvegarde toute fraîche :</p>
+<p><img alt="" src="https://i.imgur.com/pdcPQi7.png" /></p>
+<p>Il s'agit donc d'un fichier compréssé gzip contenant une chaîne de caractère.</p>
+<p>Nous obtenons le format suivant :
+<div class="highlight"><pre><span></span><code>nom::position::12 caractères hexa
+</code></pre></div></p>
+<p>Nous avons le nom du joueur, la pièce dans laquelle nous nous trouvons et 12 caractères en hexadécimal, à priori sans lien avec le jeu. Le séparateur semble être "::".</p>
+<p>Nous rechargeons la sauvegarde et avançons dans le jeu pour voir comment sa structure évolue : </p>
+<p><img alt="" src="https://i.imgur.com/b0K2iwl.png" /></p>
+<p>Nous remarquons que le jeu affiche l'état de la sauvegarde lorsque nous la chargeons et que la valeur correspond au dernier champ du fichier de sauvegarde.</p>
+<p>Ici, nous nous sommes déplacés et avons ajouté deux objets à notre inventaire : la boîte et la clef, dont nous avons fait passer l'état à "used".</p>
+<p><img alt="" src="https://i.imgur.com/SK01eSu.png" /></p>
+<p>La sauvegarde ressemble maintenant à : 
+<img alt="" src="https://i.imgur.com/nBhaWEh.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Note : Un retour à la ligne a été ajouté à la fin de la commande (<code>&amp;&amp; echo</code>) pour que la sauvegarde soit lisible. Le fichier de sauvegarde est considéré comme corrompu par le jeu s'il se termine par un saut de ligne.</p>
+</div>
+<p>Nous retrouvons 2 blocs au format <code>&lt;int&gt;;&lt;string&gt;</code> au premier <code>::</code> et le nom d'une salle au second <code>::</code>.</p>
+<p>Nous comprenons qu'il s'agit de l'inventaire avec une suite d'objets sous la forme <code>&lt;id&gt;;&lt;état&gt;,</code> puisque l'on retrouve l'état "used" de notre clef. On note au passage que la case d'état peut être vide (<code>2;&lt;null&gt;</code>).</p>
+<p>Les 12 caractères ont changés avec la sauvegarde, il s'agit donc certainement d'un hash (type MD5) ou d'un code de correction d'erreur (type CRC32).</p>
+<p>Le format de la sauvegarde est donc le suivant : 
+<div class="highlight"><pre><span></span><code>&lt;nom&gt;:&lt;objet1&gt;;&lt;état&gt;,&lt;objet2&gt;;&lt;état&gt;,...,&lt;objetN&gt;;&lt;état&gt;:&lt;position&gt;:&lt;position précédente&gt;:&lt;checksum&gt;
+</code></pre></div></p>
+<p>Les identifiants des objets semblent être incrémentaux : nous testons de changer notre clef en boîte (deux objets dont l'ID est connu) en changeant l'ID de l'item <code>1</code> en <code>2</code>.</p>
+<p>Pour cela nous décompressons notre fichier de sauvegarde avec <code>zlib-flate -uncompress &lt; ./.save.ans &gt; save.uncomp</code>, que nous recompressons avec <code>zlib-flate -compress &lt; ./save.uncomp &gt; .save.ans</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Important : il est nécessaire d'utiliser <code>set noendofline binary</code> à chaque ouverture de vim ou d'inscrire ce paramètre dans un fichier <code>.vimrc</code> à la racine du dossier pour éviter que vim ne rajoute de saut de ligne à la fin du fichier et ne corrompe la sauvegarde.</p>
+<p>Une alternative serait de recréer un fichier intermédiaire en retirant le retour à la ligne avec <code>head -c -1 ./save.uncomp &gt; ./save.uncomp2</code>.</p>
+</div>
+<p>Nous forgeons la nouvelle sauvegarde et tentons de la charger : </p>
+<p><img alt="" src="https://i.imgur.com/CRzJ8hY.png" /></p>
+<p>Le jeu nous indique que notre sauvegarde est corrompue.</p>
+<h5 id="le-check-dintegrite">Le check d'intégrité<a class="headerlink" href="#le-check-dintegrite" title="Permanent link">#</a></h5>
+<p>Nous voulons vérifier si l'hypothèse du check d'intégrité est juste. Pour cela, nous allons chercher dans le binaire si des fonctions de hachage sont utilisées.</p>
+<p>Il n'est pas nécessaire de sortir un logiciel de reverse comme IDA pour l'instant ; nous commencerons par utiliser les commandes <code>file</code> et <code>strings</code>.</p>
+<p>Le <code>file</code> nous indique qu'il s'agit d'un binaire 64 bits codé en Go, non strippé : 
+<div class="highlight"><pre><span></span><code>level0@359b243ce4cd:~$ file ./dimensional 
+./dimensional: setuid, setgid ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=KRbhNK-qTCrI6YYoim48/mbevmsH8s-itlC7_D9zy/GKbmbssdYECvm3tn7IoT/HS2lESc5tiP-_ekaKQ5m, not stripped
+</code></pre></div></p>
+<p>Les programmes compilés depuis le Golang conservent l'ensemble des fonctions utilisés en clair dans le code source. Nous confirmons cela avec un premier <code>strings</code> sans filtre :
+<div class="highlight"><pre><span></span><code>level0@359b243ce4cd:~$ strings ./dimensional
+...
+gitlab.com/Alvoras/dimensional/internal/game.UserInputln
+gitlab.com/Alvoras/dimensional/internal/game.PasswordInputln
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func1
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func2
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func3
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func4
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func5
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func6
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func7
+gitlab.com/Alvoras/dimensional/internal/game.init.0.func8
+type..eq.gitlab.com/Alvoras/dimensional/internal/game.SaveItem
+type..eq.[5]interface {}
+main.main
+</code></pre></div></p>
+<p>En utilisant <code>grep</code>, nous pouvons isoler les fonctions potentiellement utilisées grâce aux noms des paquets correspondants :</p>
+<ul>
+<li>"hash"</li>
+</ul>
+<div class="highlight"><pre><span></span><code>level0@359b243ce4cd:~$ strings ./dimensional | grep -i hash/
+hash/adler32
+hash/adler32.(*digest).Reset
+hash/adler32.(*digest).Size
+hash/adler32.(*digest).BlockSize
+hash/adler32.update
+hash/adler32.(*digest).Write
+hash/adler32.(*digest).Sum32
+hash/adler32.(*digest).Sum
+hash/adler32.New
+hash/adler32.Checksum
+/usr/local/go/src/hash/adler32/adler32.go
+hash/adler32..inittask
+go.itab.*hash/adler32.digest,hash.Hash32
+hash/adler32.(*digest).Reset
+hash/adler32.(*digest).Size
+hash/adler32.(*digest).BlockSize
+hash/adler32.update
+hash/adler32.(*digest).Write
+hash/adler32.(*digest).Sum32
+hash/adler32.(*digest).Sum
+</code></pre></div>
+<ul>
+<li>"crypto"</li>
+</ul>
+<div class="highlight"><pre><span></span><code>level0@359b243ce4cd:~$ strings ./dimensional | grep -i crypto/
+crypto/sha512
+crypto/sha512.init.0
+crypto/sha512.(*digest).Reset
+crypto/sha512.New
+crypto/sha512.New512_224
+crypto/sha512.New512_256
+crypto/sha512.New384
+crypto/sha512.(*digest).Size
+crypto/sha512.(*digest).BlockSize
+crypto/sha512.(*digest).Write
+crypto/sha512.(*digest).Sum
+crypto/sha512.(*digest).checkSum
+crypto/sha512.Sum512
+crypto/sha512.block
+crypto/sha512.init
+crypto/sha512.blockAMD64
+crypto/sha512.blockAVX2
+/usr/local/go/src/crypto/sha512/sha512block_amd64.s
+/usr/local/go/src/crypto/sha512/sha512block_amd64.go
+/usr/local/go/src/crypto/sha512/sha512.go
+/usr/local/go/src/crypto/crypto.go
+crypto/sha512.blockAVX2.args_stackmap
+crypto/sha512.blockAMD64.args_stackmap
+crypto/sha512..inittask
+crypto/sha512._K
+crypto/sha512.useAVX2
+go.itab.*crypto/sha512.digest,hash.Hash
+crypto/sha512.init.0
+crypto/sha512.(*digest).Reset
+crypto/sha512.New
+crypto/sha512.New512_224
+crypto/sha512.New512_256
+crypto/sha512.New384
+crypto/sha512.(*digest).Size
+crypto/sha512.(*digest).BlockSize
+crypto/sha512.(*digest).Write
+crypto/sha512.(*digest).Sum
+crypto/sha512.(*digest).checkSum
+crypto/sha512.Sum512
+crypto/sha512.block
+crypto/sha512.init
+crypto/sha512.blockAMD64
+crypto/sha512.blockAVX2
+</code></pre></div>
+<p>Nous identifions quatre candidats : </p>
+<ul>
+<li>Adler32</li>
+<li>SHA512-224</li>
+<li>SHA512-256</li>
+<li>SHA384</li>
+<li>SHA512</li>
+</ul>
+<p>L'algorithme Adler32 ne produit que des sommes, exprimées en un nombre possédant jusqu'à 10 chiffres ; nous l'écartons donc pour nous concentrer sur le SHA-512.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>L'algorithme Adler32 est utilisé par la compression gzip, ce qui justifie sa présence dans le binaire.</p>
+</div>
+<p>Puisqu'il existe 3 formats gérés par la lib crypto/sha512, nous nous contenterons... de tous les essayer.</p>
+<p>Ces fonctions correspondent aux algorithmes 512-224, 512-256, 384, et 512  de la commande <code>shasum</code>. Nous pouvons donc toutes les tester de la manière suivante : </p>
+<div class="highlight"><pre><span></span><code>level0@359b243ce4cd:~$ echo -n &quot;alvoras:1;used,2;:Salle de saut:Porte:&quot; &gt; ./raw
+
+level0@359b243ce4cd:~$ shasum -a 512224 ./raw; shasum -a 512256 ./raw; shasum -a 384 ./raw; shasum -a 512 ./raw
+9a8632699d0e944ef4733d84468878561f2491414db301287f341eaa  ./raw
+ca3e64ee4b2fd78d393c99952207bf09c6d95bc4759e3154a3d68cf301c9fd0b  ./raw
+abe6d7fcbfc0bc8536b6b8b62a9f9596d6c8024bba450541ef58c9ad6595e84f8d367b08be84746a7fb5c67ec920965f  ./raw
+4937897b1ad44ed355e8324d3d9a67fe7ff80cfc16101c6aabe54dbb3059a36900e526c3a750b885cd22ae26412a81a075d77ed82036a3b3f38271772c497bf0  ./raw
+</code></pre></div>
+<p>Nous avons un match avec la dernière commande : il s'agit donc des 12 premiers caractères d'un SHA512 du fichier de sauvegarde.</p>
+<p>Nous validons notre hypothèse en reprenant la manipulation citée plus haut mais en modifiant cette fois-ci le hash : </p>
+<div class="highlight"><pre><span></span><code>level0@359b243ce4cd:~$ echo -n &quot;alvoras:2;used,2;:Salle de saut:Porte:&quot; | sha512sum | head -c 12 &amp;&amp; echo
+88038a66346d
+level0@359b243ce4cd:~$ # On modifie l&#39;ID de la clef et on remplace le hash tronqué 
+level0@359b243ce4cd:~$ vim ./save.uncomp  
+level0@359b243ce4cd:~$ zlib-flate -compress &lt; ./save.uncomp &gt; .save.ans
+</code></pre></div>
+<p><img alt="" src="https://i.imgur.com/Tl08Sml.png" /></p>
+<p>Notre sauvegarde est valide et nous obtenons bien deux boîtes dans notre inventaire.</p>
+<h5 id="la-generation-dobjets">La génération d'objets<a class="headerlink" href="#la-generation-dobjets" title="Permanent link">#</a></h5>
+<p>Maintenant que nous sommes en mesure de modifier la sauvegarde sans la corrompre, nous pouvons faire apparaître n'importe quel item dans notre inventaire.</p>
+<p>Nous ne connaissons pas l'ID de l'UVL540. Qu'à cela ne tienne, nous générons les items possédant les IDs de 1 à 30.</p>
+<p>Pour simplifier les manipulations, nous créons un petit script bash qui reprend les commandes au-dessus : </p>
+<div class="highlight"><pre><span></span><code><span class="nv">save</span><span class="o">=</span><span class="s2">&quot;alvoras:1;used,2;,3;,4;,5;,6;,7;,8;,9;,10;,11;,12;,13;,14;,15;,16;,17;,18;,19;,20;,21;,22;,23;,24;,25;,26;,27;,28;,29;,30;:Salle de saut:Porte:&quot;</span>
+<span class="nv">hash</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="nv">$save</span><span class="s2">&quot;</span> <span class="p">|</span> sha512sum <span class="p">|</span> head -c <span class="m">12</span><span class="k">)</span>
+
+<span class="nb">echo</span> <span class="nv">$save$hash</span>
+<span class="nb">echo</span> -n <span class="nv">$save$hash</span> &gt; tmp_save
+zlib-flate -compress &lt; ./tmp_save &gt; .save.ans
+./dimensional
+</code></pre></div>
+<p>... et nous obtenons une sauvegarde corrompue.</p>
+<p>Nous vérifions que le script fonctionne bien en ajoutant un unique objet : </p>
+<div class="highlight"><pre><span></span><code><span class="nv">save</span><span class="o">=</span><span class="s2">&quot;alvoras:1;used,2;,3;:Salle de saut:Porte:&quot;</span>
+<span class="nv">hash</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="nv">$save</span><span class="s2">&quot;</span> <span class="p">|</span> sha512sum <span class="p">|</span> head -c <span class="m">12</span><span class="k">)</span>
+
+<span class="nb">echo</span> <span class="nv">$save$hash</span>
+<span class="nb">echo</span> -n <span class="nv">$save$hash</span> &gt; tmp_save
+zlib-flate -compress &lt; ./tmp_save &gt; .save.ans
+./dimensional
+</code></pre></div>
+<p><img alt="" src="https://i.imgur.com/s4Wu5WR.png" /></p>
+<p>Il fonctionne donc correctement ; le crash peut être lié soit à une trop grande quantité d'objets dans l'inventaire, soit à des identifiants invalides.</p>
+<p>Nous avançons plus prudemment en itérant sur le 3ème champ, jusqu'à arriver sur la sauvegarde suivante : </p>
+<p><code>alvoras:1;used,2;,4;:Salle de saut:Porte:7dc79aa29c6f</code></p>
+<p><img alt="" src="https://i.imgur.com/g8yLGQu.png" /></p>
+<p>Nous obtenons ainsi l'UVL540, qui possède l'identifiant "4".</p>
+<h4 id="la-console">La console<a class="headerlink" href="#la-console" title="Permanent link">#</a></h4>
+<p>Une fois l'UVL540 obtenu, il faut aller charger le programme de saut depuis la console. Un mot de passe est nécessaire, sans quoi la sauvegarde est détruite.</p>
+<p>Encore une fois, nous utilisons <code>strings</code> pour fouiller dans le programme.</p>
+<p>Nous cherchons une chaîne de caractère que nous savons présente (ici "Si un jour tu lis ce message,") pour nous rendre dans la section où sont contenues les variables du programme :</p>
+<p><img alt="" src="https://i.imgur.com/P7fjm8t.png" /></p>
+<p>Quelques lignes de dialogue que nous n'avons jamais vu attire notre attention :</p>
+<div class="highlight"><pre><span></span><code>&gt; Tu cherches des indices autour de toi.
+&gt; Le vieux avait une mauvaise m
+moire, le mot de passe devrait 
+tre not
+ quelque part...
+&gt; Bingo ! Sous le *clavier*. Si l&#39;ANSSI voyait 
+a...
+</code></pre></div>
+<p>Dans la salle de saut, nous nous rendons devant le *clavier*...</p>
+<p><img alt="" src="https://i.imgur.com/POSjEVM.png" /></p>
+<p>... pour y trouver le mot de passe.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Pour éviter que le mot de passe ne se retrouve en clair dans le binaire et forcer le joueur à passer par le jeu, il est dérivé de manière dynamique à partir du hash d'intégrité de la sauvegarde chargée.</p>
+</div>
+<p>Nous le rentrons dans la console :</p>
+<p><img alt="" src="https://i.imgur.com/pdsvGqE.png" /></p>
+<p>L'UVL540 est maintenant chargé.</p>
+<p><img alt="" src="https://i.imgur.com/MqAgaV4.png" /></p>
+<h4 id="le-flag">Le flag<a class="headerlink" href="#le-flag" title="Permanent link">#</a></h4>
+<p>Nous pouvons désormais utiliser l'item pour se rendre dans le cyberespace et récupérer le flag : </p>
+<p><img alt="" src="https://i.imgur.com/nBU64TM.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../defsec/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Sécurité défensive
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>

