@@ -1,0 +1,22 @@
+site_name: Mélodie Bouffier
+theme:
+  name: material
+  palette:
+    primary: cyan
+nav:
+- Table des matières: index.md
+- Threat intelligence: cti.md
+- Sécurité offensive: offsec.md
+- Sécurité défensive: defsec.md
+- CTF: ctf.md
+docs_dir: pages
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - footnotes
+  - toc:
+      permalink: "#"
+plugins:
+    - search
+      #    - awesome-pages
