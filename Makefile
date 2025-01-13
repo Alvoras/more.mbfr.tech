@@ -2,7 +2,7 @@ default: help
 
 ## help : Show this help
 help: Makefile
-	@printf "\nmore.mbfr.info pages\n\n"
+	@printf "\nmore.mbfr.tech pages\n\n"
 	@sed -n 's/^##//p' $< | column -t -s ':' |  sed -e 's/^/ /'
 	@printf ""
 
